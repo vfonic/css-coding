@@ -42,6 +42,19 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="./index_files/form-validation.css" rel="stylesheet">
+    <style>
+      .fadeinout > div,
+      .fadeinout > span {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+      }
+      .fadeinout:hover > div,
+      .fadeinout:hover > span {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
   </head>
   <body class="bg-light">
     <div class="container">
@@ -58,7 +71,7 @@
         <span class="badge badge-secondary badge-pill">3</span>
       </h4>
       <ul class="list-group mb-3">
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <li class="list-group-item d-flex justify-content-between lh-condensed fadeinout">
           <div>
             <h6 class="my-0">Product name</h6>
             <div class="text-muted">Brief description</div>
@@ -184,6 +197,158 @@
             </div>
           </div>
         </div>
+        <style>.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+
+  border-top: 10px solid #555;
+}
+
+          .nas-checkbox {
+            display: none;
+          }
+          .nas-checkbox + label {
+            position: relative;
+            padding-left: 25px;
+          }
+          .nas-checkbox + label:before {
+            position: absolute;
+            left: 0;
+            top: calc(50% - 10px);
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+          }
+          .nas-checkbox + label:after {
+            position: absolute;
+            left: 0;
+            top: calc(50% - 10px);
+            display: block;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            content: "✓";
+            line-height: 20px;
+            font-weight: bold;
+            transform: scale(0);
+            transition: all 0.3s;
+          }
+          .nas-checkbox:checked + label:after {
+            transform: scale(1)
+          }
+
+
+          .nas-accordion {
+            display: none;
+          }
+          .nas-accordion + label {
+            display: block;
+            position: relative;
+          }
+          .nas-accordion-content {
+            display: none;
+          }
+          .nas-accordion + label .arrow-down {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          .nas-accordion:checked + label .arrow-down {
+            transform: translateY(-50%) rotate(180deg);
+          }
+          .nas-accordion:checked + label + .nas-accordion-content {
+            display: block
+          }
+        </style>
+        <hr class="mb-4">
+        <input type="radio" name="nas-accordion" id="nas-checkbox-id" class="nas-checkbox">
+        <label for="nas-checkbox-id">
+          Label naseg checkboxa
+        </label>
+
+        <style>
+          .gridLayout {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -10px;
+            margin-left: -10px;
+          }
+          .threeColumns-column {
+            flex-basis: calc(100% / 3);
+            padding: 0 10px 10px;
+          }
+          .twoColumns-column {
+            flex-basis: 50%;
+            padding: 0 10px 10px;
+          }
+        </style>
+
+        <div class="gridLayout">
+          <div class="threeColumns-column">
+            <div style="background: rgba(255,0,0,0.5)">
+              First column
+            </div>
+          </div>
+          <div class="threeColumns-column" >
+            <div style="background: rgba(0,255,0,0.5)">
+              Second column
+            </div>
+          </div>
+          <div class="threeColumns-column" >
+            <div style="background: rgba(0,0,255,0.5)">
+              Third column
+            </div>
+          </div>
+
+          <div class="twoColumns-column">
+            <div style="background: rgba(255,0,0,0.5)">
+              First column
+            </div>
+          </div>
+          <div class="twoColumns-column" >
+            <div style="background: rgba(0,255,0,0.5)">
+              Second column
+            </div>
+          </div>
+          <div class="threeColumns-column" >
+            <div style="background: rgba(0,0,255,0.5)">
+              Third column
+            </div>
+          </div>
+        </div>
+
+
+
+        <hr class="mb-4">
+        <input type="radio" name="nas-accordion" id="nas-accordion-id" class="nas-accordion">
+        <label for="nas-accordion-id">
+          Label naseg accordiona
+          <div class="arrow-down"></div>
+        </label>
+        <p class="nas-accordion-content">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+
+        <hr class="mb-4">
+        <input type="radio" name="nas-accordion" id="nas-accordion-id2" class="nas-accordion">
+        <label for="nas-accordion-id2">
+          Label naseg accordiona
+          <div class="arrow-down"></div>
+        </label>
+        <p class="nas-accordion-content">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+
+        <hr class="mb-4">
+        <input type="radio" name="nas-accordion" id="nas-accordion-id3" class="nas-accordion">
+        <label for="nas-accordion-id3">
+          Label naseg accordiona
+          <div class="arrow-down"></div>
+        </label>
+        <p class="nas-accordion-content">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
         <hr class="mb-4">
         <div class="custom-control custom-checkbox">
           <input type="checkbox" class="custom-control-input" id="same-address">
